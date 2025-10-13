@@ -271,8 +271,8 @@ export default {
         },
         watchTextAreas() {
             let txt = document.querySelector("#text");
-            txt.setAttribute("style", "height:" + (txt.scrollHeight + 20) + "px;overflow-y:hidden;");
-            txt.addEventListener("input", changeHeight, false);
+            txt?.setAttribute("style", "height:" + (txt.scrollHeight + 20) + "px;overflow-y:hidden;");
+            txt?.addEventListener("input", changeHeight, false);
 
             function changeHeight() {
                 this.style.height = "auto";

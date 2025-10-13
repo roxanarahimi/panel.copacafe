@@ -237,8 +237,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     watchTextAreas: function watchTextAreas() {
       var txt = document.querySelector("#text");
-      txt.setAttribute("style", "height:" + (txt.scrollHeight + 20) + "px;overflow-y:hidden;");
-      txt.addEventListener("input", changeHeight, false);
+      txt === null || txt === void 0 ? void 0 : txt.setAttribute("style", "height:" + (txt.scrollHeight + 20) + "px;overflow-y:hidden;");
+      txt === null || txt === void 0 ? void 0 : txt.addEventListener("input", changeHeight, false);
       function changeHeight() {
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
