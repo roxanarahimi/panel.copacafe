@@ -43,17 +43,8 @@ import DayReportCards from "./dashboard/DayReportCards";
 export default {
     components: {LatestProducts, App, Loader, DayReportCards},
     setup() {
-        const articles = ref({});
         const products = ref({});
-        const loadArticles= ()=>{
-            axios.get('/api/panel/article?page=1&perPage=4')
-                .then((response) => {
-                    articles.value = response.data.data;
 
-
-                })
-                .catch();
-        }
         const loadProducts= ()=>{
             axios.get('/api/panel/product?page=1&perPage=4')
                 .then((response) => {
@@ -66,11 +57,10 @@ export default {
         }
         onMounted(() => {
             document.querySelector('#admin_label').innerHTML = JSON.parse(localStorage.getItem('admin')).name;
-            loadArticles();
             loadProducts();
 
         });
-        return { articles, loadArticles,loadProducts, products}
+        return { loadProducts, products}
     },
 
 

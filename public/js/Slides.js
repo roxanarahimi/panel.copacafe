@@ -17,11 +17,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.umd.js");
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_2__);
 
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -40,7 +37,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     loadAllData: function loadAllData() {
       var _this = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
@@ -50,7 +46,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.get('/api/panel/slide').then(function (response) {
                   _this.allData = response.data;
                 })["catch"]();
-
               case 2:
               case "end":
                 return _context.stop();
@@ -64,7 +59,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     deleteInfo: function deleteInfo() {
       var _this2 = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
@@ -79,7 +73,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
                 _context2.next = 3;
                 return _this2.loadAllData();
-
               case 3:
               case "end":
                 return _context2.stop();
@@ -90,7 +83,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     pActiveToggle: function pActiveToggle(id) {
       var _this3 = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
           while (1) {
@@ -102,11 +94,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 })["catch"](function (error) {
                   console.error(error);
                 });
-
               case 2:
                 _context3.next = 4;
                 return _this3.loadAllData();
-
               case 4:
               case "end":
                 return _context3.stop();
@@ -117,7 +107,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     updateSlidesOrder: function updateSlidesOrder() {
       var _this4 = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
         var children, index;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
@@ -130,17 +119,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return children.forEach(function (item) {
                   axios.post('/api/panel/slide/' + item.getAttribute('data-id'), {
                     index: index
-                  }).then(function (response) {// console.log(response);
+                  }).then(function (response) {
+                    // console.log(response);
                   })["catch"](function (error) {
                     console.log(error);
                   });
                   index++;
                 });
-
               case 4:
                 _context4.next = 6;
                 return _this4.loadAllData();
-
               case 6:
               case "end":
                 return _context4.stop();
@@ -170,9 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "mb-5"
 };
-
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("اسلاید ها ");
-
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   title: "ثبت محصول جدید",
   "class": "px-3 d-inline-block align-middle"
@@ -181,18 +167,12 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   style: {
     "font-size": "15px"
   }
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   style: {
     "font-size": "14px"
   }
-}, "برای عوض کردن ترتیب اسلاید ها، drag & drop کنید", -1
-/* HOISTED */
-);
-
+}, "برای عوض کردن ترتیب اسلاید ها، drag & drop کنید", -1 /* HOISTED */);
 var _hoisted_5 = {
   "class": "row mt-3"
 };
@@ -242,52 +222,34 @@ var _hoisted_16 = {
   "class": "me-3"
 };
 var _hoisted_17 = ["onClick"];
-
 var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bi bi-eye-fill"
-}, null, -1
-/* HOISTED */
-);
-
+}, null, -1 /* HOISTED */);
 var _hoisted_19 = [_hoisted_18];
 var _hoisted_20 = ["onClick"];
-
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bi bi-eye-slash-fill"
-}, null, -1
-/* HOISTED */
-);
-
+}, null, -1 /* HOISTED */);
 var _hoisted_22 = [_hoisted_21];
-
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   role: "button",
   "data-bs-toggle": "dropdown",
   "aria-expanded": "false"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bi bi-three-dots-vertical"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_24 = {
   "class": "dropdown-menu",
   "aria-labelledby": "navbarScrollingDropdown"
 };
-
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ویرایش ");
-
 var _hoisted_26 = ["onClick"];
 var _hoisted_27 = {
   key: 1
 };
-
 var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "fw-bold"
-}, "هیچ اسلایدی موجود نیست", -1
-/* HOISTED */
-);
-
+}, "هیچ اسلایدی موجود نیست", -1 /* HOISTED */);
 var _hoisted_29 = [_hoisted_28];
 var _hoisted_30 = {
   "class": "modal fade",
@@ -302,7 +264,6 @@ var _hoisted_31 = {
 var _hoisted_32 = {
   "class": "modal-content"
 };
-
 var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "modal-header border-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -310,40 +271,25 @@ var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "btn-close",
   "data-bs-dismiss": "modal",
   "aria-label": "Close"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "modal-body"
-}, " آیا اسلاید مورد نظر حذف شود؟ ", -1
-/* HOISTED */
-);
-
+}, " آیا اسلاید مورد نظر حذف شود؟ ", -1 /* HOISTED */);
 var _hoisted_35 = {
   "class": "modal-footer border-0"
 };
-
 var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "hidden",
   id: "deleteId"
-}, null, -1
-/* HOISTED */
-);
-
+}, null, -1 /* HOISTED */);
 var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   "class": "btn btn-secondary",
   "data-bs-dismiss": "modal"
-}, "نه !", -1
-/* HOISTED */
-);
-
+}, "نه !", -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-
   var _component_draggable = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("draggable");
-
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
     name: "route",
     mode: "out-in",
@@ -357,9 +303,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_3];
         }),
-        _: 1
-        /* STABLE */
-
+        _: 1 /* STABLE */
       }), _hoisted_4]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_ctx.allData.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <div class = \"card-body \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_draggable, {
         "ghost-class": "moving-card",
         animation: 500,
@@ -391,29 +335,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             "class": "rounded d-inline-block my-1",
             width: "80",
             src: element.image
-          }, null, 8
-          /* PROPS */
-          , _hoisted_10)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(element.title), 1
-          /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(element.subTitle), 1
-          /* TEXT */
-          )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_16, [element.active ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+          }, null, 8 /* PROPS */, _hoisted_10)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(element.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(element.subTitle), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_16, [element.active ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
             key: 0,
             onClick: function onClick($event) {
               return $options.pActiveToggle(element.id);
             },
             "class": "badge bg-success text-light"
-          }, _hoisted_19, 8
-          /* PROPS */
-          , _hoisted_17)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+          }, _hoisted_19, 8 /* PROPS */, _hoisted_17)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
             key: 1,
             onClick: function onClick($event) {
               return $options.pActiveToggle(element.id);
             },
             "class": "badge bg-danger text-light"
-          }, _hoisted_22, 8
-          /* PROPS */
-          , _hoisted_20))]), _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <router-link :to = \"'/slide/'+data.id\" class = \"dropdown-item\" style = \"text-align: right !important\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                مشاهده"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            </router-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+          }, _hoisted_22, 8 /* PROPS */, _hoisted_20))]), _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <router-link :to = \"'/slide/'+data.id\" class = \"dropdown-item\" style = \"text-align: right !important\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                مشاهده"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            </router-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
             to: '/panel/edit/slide/' + element.id,
             "class": "dropdown-item",
             style: {
@@ -423,12 +357,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [_hoisted_25];
             }),
-            _: 2
-            /* DYNAMIC */
-
-          }, 1032
-          /* PROPS, DYNAMIC_SLOTS */
-          , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+            _: 2 /* DYNAMIC */
+          }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
             "class": "dropdown-item",
             onClick: function onClick($event) {
               return $options.showDeleteModal(element.id);
@@ -438,22 +368,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             },
             "data-bs-toggle": "modal",
             "data-bs-target": "#exampleModal"
-          }, "حذف", 8
-          /* PROPS */
-          , _hoisted_26)])])])])], 8
-          /* PROPS */
-          , _hoisted_8)];
+          }, "حذف", 8 /* PROPS */, _hoisted_26)])])])])], 8 /* PROPS */, _hoisted_8)];
         }),
-        _: 1
-        /* STABLE */
-
-      }, 8
-      /* PROPS */
-      , ["modelValue", "onDrop"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, _hoisted_29))])])])];
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["modelValue", "onDrop"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, _hoisted_29))])])])];
     }),
-    _: 1
-    /* STABLE */
-
+    _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [_hoisted_33, _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-dark",
@@ -461,9 +381,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[3] || (_cache[3] = function () {
       return $options.deleteInfo && $options.deleteInfo.apply($options, arguments);
     })
-  }, "بله "), _hoisted_37])])])])], 64
-  /* STABLE_FRAGMENT */
-  );
+  }, "بله "), _hoisted_37])])])])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -4327,7 +4245,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Slides_vue_vue_type_template_id_e630c554__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Slides.vue?vue&type=template&id=e630c554 */ "./resources/js/components/panel/slide/Slides.vue?vue&type=template&id=e630c554");
 /* harmony import */ var _Slides_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Slides.vue?vue&type=script&lang=js */ "./resources/js/components/panel/slide/Slides.vue?vue&type=script&lang=js");
 /* harmony import */ var _Slides_vue_vue_type_style_index_0_id_e630c554_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Slides.vue?vue&type=style&index=0&id=e630c554&lang=css */ "./resources/js/components/panel/slide/Slides.vue?vue&type=style&index=0&id=e630c554&lang=css");
-/* harmony import */ var F_PROJECTS_2024_copacafe_panel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_PROJECTS_2024_panel_copacafe_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -4335,7 +4253,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,F_PROJECTS_2024_copacafe_panel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Slides_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Slides_vue_vue_type_template_id_e630c554__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/panel/slide/Slides.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_PROJECTS_2024_panel_copacafe_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Slides_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Slides_vue_vue_type_template_id_e630c554__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/panel/slide/Slides.vue"]])
 /* hot reload */
 if (false) {}
 

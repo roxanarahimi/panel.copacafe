@@ -7,19 +7,8 @@
     "/js/ProductCreate.js": "/js/ProductCreate.js",
     "/js/ProductEdit.js": "/js/ProductEdit.js",
     "/js/Product.js": "/js/Product.js",
-    "/js/OrderCreate.js": "/js/OrderCreate.js",
-    "/js/OrderEdit.js": "/js/OrderEdit.js",
-    "/js/Order.js": "/js/Order.js",
-    "/js/ArticleCreate.js": "/js/ArticleCreate.js",
-    "/js/ArticleEdit.js": "/js/ArticleEdit.js",
-    "/js/Article.js": "/js/Article.js",
     "/js/Slides.js": "/js/Slides.js",
-    "/js/BlogCreate.js": "/js/BlogCreate.js",
-    "/js/BlogEdit.js": "/js/BlogEdit.js",
-    "/js/Blog.js": "/js/Blog.js",
-    "/js/TeaserCreate.js": "/js/TeaserCreate.js",
-    "/js/TeaserEdit.js": "/js/TeaserEdit.js",
-    "/js/Teaser.js": "/js/Teaser.js",
     "/js/User.js": "/js/User.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/userAllData.js": "/js/userAllData.js"
 }
