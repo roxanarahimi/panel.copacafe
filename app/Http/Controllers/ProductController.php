@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ProductResource;
-use App\Models\Article;
 use App\Models\Product;
-use App\Models\ProductSize;
-use App\Models\RelatedProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Mockery\Exception;
@@ -158,31 +155,12 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         try {
-
-            $sizes = ProductSize::where('product_id', $product['id'])->where('stock', '>', 0)->get(['color_name', 'color_code']);
-            $sizes = json_decode($sizes);
-//            return $sizes;
-            $colors = [];
-            foreach ($sizes as $item) {
-                array_push($colors, json_encode(['color_name' => $item->color_name, 'color_code' => $item->color_code]));
-            }
-            return response(['product' => new ProductResource($product), 'colors' => array_unique($colors)], 200);
+            return response(new ProductResource($product), 200);
         } catch (\Exception $exception) {
             return response($exception);
         }
     }
 
-    public function getSizes($id, $color)
-    {
-        try {
-
-            $data = ProductSize::where('product_id', $id)->where('color_name', $color)->where('stock', '>', 0)->get();
-            return response($data, 200);
-
-        } catch (\Exception $exception) {
-            return response($exception);
-        }
-    }
 
     public function saveImages($requestImages, $productId)
     {
@@ -220,7 +198,7 @@ class ProductController extends Controller
             return response()->json($validator->messages(), 422);
         }
         try {
-            $product = Product::create($request->except('image1','image2','related_products'));
+            $product = Product::create($request->except('image1','image2'));
             if ($request['image1']) {
                 $name = 'product_' . $product['id'] . '_' . uniqid() . '.png';
                 $image_path = (new ImageController)->uploadImage($request['image1'], $name, 'images/products/');
@@ -235,14 +213,7 @@ class ProductController extends Controller
 
                 (new ImageController)->resizeImage('images/products/',$name);
             }
-            if ($request['related_products']){
-                foreach ($request['related_products'] as $item){
-                    RelatedProduct::create([
-                        'product_id' => $product['id'],
-                        'related_product_id' => $item,
-                    ]);
-                }
-            }
+
             return response(new ProductResource($product), 201);
         } catch (\Exception $exception) {
             return response($exception);
@@ -265,7 +236,7 @@ class ProductController extends Controller
             return response()->json($validator->messages(), 422);
         }
         try {
-            $product->update($request->except('image1','image2','related_products'));
+            $product->update($request->except('image1','image2'));
             if ($request['image1']) {
                 $name = 'product_' . $product['id'] . '_' . uniqid() . '.png';
                 $image_path = (new ImageController)->uploadImage($request['image1'], $name, 'images/products/');
@@ -289,18 +260,6 @@ class ProductController extends Controller
                 }
                 $product->update(['image2' => '/' . $image_path]);
                 (new ImageController)->resizeImage('images/products/',$name);
-            }
-
-            $relatedZ = RelatedProduct::where('product_id', $request['id'])->get();
-            foreach ($relatedZ as $item){ $item->delete();}
-
-            if ($request['related_products']){
-                foreach ($request['related_products'] as $item){
-                    RelatedProduct::create([
-                        'product_id' => $product['id'],
-                        'related_product_id' => $item,
-                    ]);
-                }
             }
 
             return response(new ProductResource($product), 200);
@@ -335,8 +294,6 @@ class ProductController extends Controller
     {
 
         try {
-            $relatedZ = RelatedProduct::where('product_id', $product['id'])->get();
-            foreach ($relatedZ as $item){ $item->delete();}
             if ($product['image']){
                 $file_to_delete = ltrim($product['image'], $product['image'][0]); //remove '/' from file name start
                 $file_to_delete_thumb = ltrim(str_replace('.png','_thumb.png',$file_to_delete));
