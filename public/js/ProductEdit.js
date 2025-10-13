@@ -127,7 +127,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get('/api/panel/product/' + this.id).then(function (response) {
         var _this$data;
-        console.log(response.data);
         _this.data = response.data;
         if ((_this$data = _this.data) !== null && _this$data !== void 0 && _this$data.images) {
           _this.images = _this.data.images;
@@ -135,28 +134,17 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function () {
         _this.isDefined = true;
       }).then(function () {
-        _this.value = _this.data.related_products;
-      }).then(function () {
         _this.watchTextAreas();
       })["catch"]();
     },
-    loadProducts: function loadProducts() {
-      var _this2 = this;
-      axios.get('/api/panel/product?page=1&perPage=1000&search=').then(function (response) {
-        _this2.allProducts = response.data.data;
-        _this2.allProducts = _this2.allProducts.filter(function (item) {
-          return item.id != _this2.id;
-        });
-      })["catch"]();
-    },
     loadCategories: function loadCategories() {
-      var _this3 = this;
+      var _this2 = this;
       axios.get('/api/panel/category/product?page=1&perPage=100000').then(function (response) {
-        _this3.categories = response.data.data;
+        _this2.categories = response.data.data;
       })["catch"]();
     },
     updateInfo: function updateInfo() {
-      var _this4 = this;
+      var _this3 = this;
       this.errors = [];
       var emptyFieldsCount = 0;
       var req = document.querySelectorAll('[required]');
@@ -186,8 +174,8 @@ __webpack_require__.r(__webpack_exports__);
           console.log('res', response);
           if (response.status === 200) {
             setTimeout(function () {
-              _this4.$router.push({
-                path: '/panel/product/' + _this4.id
+              _this3.$router.push({
+                path: '/panel/product/' + _this3.id
               });
             }, 1000);
           }
@@ -197,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
           if (error.response.status === 422) {
             var errorList = Array(error.response.data);
             for (var i = 0; i < errorList.length; i++) {
-              _this4.errors = errorList[i];
+              _this3.errors = errorList[i];
             }
           } else if (error.response.status === 500) {
             if (error.response.data.message.includes("SQLSTATE")) {
