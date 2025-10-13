@@ -123,7 +123,6 @@ export default {
             isDefined: false,
             enableClick: true,
             features: [],
-            sizes: [{"size": "", "dimensions": "", "color_name": "", "color_code": "", "stock": ""}],
             images: [],
 
             value: [],
@@ -143,12 +142,8 @@ export default {
             axios.get('/api/panel/product/' + this.id)
                 .then((response) => {
                     console.log(response.data);
-                    this.data = response.data.product;
-
-                    if (this.data.sizes && this.data.sizes.length) {
-                        this.sizes = this.data.sizes;
-                    }
-                    if (this.data.images) {
+                    this.data = response.data;
+                    if (this.data?.images) {
                         this.images = this.data.images;
                     }
                 })

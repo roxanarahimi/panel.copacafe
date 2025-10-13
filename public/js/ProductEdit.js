@@ -112,13 +112,6 @@ __webpack_require__.r(__webpack_exports__);
       isDefined: false,
       enableClick: true,
       features: [],
-      sizes: [{
-        "size": "",
-        "dimensions": "",
-        "color_name": "",
-        "color_code": "",
-        "stock": ""
-      }],
       images: [],
       value: [],
       allProducts: []
@@ -133,12 +126,10 @@ __webpack_require__.r(__webpack_exports__);
     loadProduct: function loadProduct() {
       var _this = this;
       axios.get('/api/panel/product/' + this.id).then(function (response) {
+        var _this$data;
         console.log(response.data);
-        _this.data = response.data.product;
-        if (_this.data.sizes && _this.data.sizes.length) {
-          _this.sizes = _this.data.sizes;
-        }
-        if (_this.data.images) {
+        _this.data = response.data;
+        if ((_this$data = _this.data) !== null && _this$data !== void 0 && _this$data.images) {
           _this.images = _this.data.images;
         }
       }).then(function () {
