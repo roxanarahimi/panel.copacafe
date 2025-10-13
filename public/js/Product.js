@@ -139,7 +139,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 2;
                 return axios.get('/api/panel/product/' + _this.id).then(function (response) {
                   var _this$data, _this$data2;
-                  _this.data = response;
+                  _this.data = response.data;
+                  console.log('dd', _this.data);
                   if ((_this$data = _this.data) !== null && _this$data !== void 0 && _this$data.features) {
                     _this.features = [];
                     for (var i = 0; i < JSON.parse(_this.data.features).length; i++) {
