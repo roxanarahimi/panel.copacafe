@@ -93,7 +93,7 @@ export default {
                     // if (document.querySelector('#text')) {
                     //     document.querySelector('#text').innerText = this.data.text;
                     // }
-                    if (this.data.features) {
+                    if (this.data?.features) {
                         this.features = [];
                         for (let i = 0; i < JSON.parse(this.data.features).length; i++) {
                             this.features.push(JSON.parse(this.data.features)[i]);
