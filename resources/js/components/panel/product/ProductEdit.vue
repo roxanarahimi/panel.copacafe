@@ -126,14 +126,12 @@ export default {
             images: [],
 
             value: [],
-            allProducts: []
         }
     },
 
     created() {
         this.loadCategories();
         this.loadProduct();
-        this.loadProducts();
     },
 
     methods: {

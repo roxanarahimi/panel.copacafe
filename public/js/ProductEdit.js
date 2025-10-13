@@ -113,14 +113,12 @@ __webpack_require__.r(__webpack_exports__);
       enableClick: true,
       features: [],
       images: [],
-      value: [],
-      allProducts: []
+      value: []
     };
   },
   created: function created() {
     this.loadCategories();
     this.loadProduct();
-    this.loadProducts();
   },
   methods: {
     loadProduct: function loadProduct() {
