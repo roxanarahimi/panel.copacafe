@@ -5,7 +5,7 @@
 
             <div class="row mt-3">
                 <div class="col-12 mb-3">
-                    <div class="card" v-if="isDefined">
+                    <div class="card" v-if="data?.length">
                         <div class="card-body">
                             <form id="editForm">
                                 <div class="row">

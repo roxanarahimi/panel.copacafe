@@ -5,7 +5,7 @@
 
             <div class = "row mt-3">
                 <div class = "col-12 mb-3">
-                    <div v-if = "isDefined" class = "card">
+                    <div v-if = "data?.length" class = "card">
                         <div class = "card-body">
                             <form id = "editForm">
                                 <div class = "row">
