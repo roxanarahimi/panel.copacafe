@@ -141,7 +141,6 @@ export default {
 
             axios.get('/api/panel/product/' + this.id)
                 .then((response) => {
-                    console.log(response.data);
                     this.data = response.data;
                     if (this.data?.images) {
                         this.images = this.data.images;
@@ -151,21 +150,9 @@ export default {
                     this.isDefined = true;
                 })
                 .then(() => {
-                    this.value = this.data.related_products;
-                })
-                .then(() => {
                     this.watchTextAreas();
                 })
                 .catch();
-        },
-        loadProducts() {
-
-            axios.get('/api/panel/product?page=1&perPage=1000&search=')
-                .then((response) => {
-                    this.allProducts = response.data.data;
-                    this.allProducts = this.allProducts.filter((item)=>item.id != this.id);
-                })
-                .catch()
         },
         loadCategories() {
             axios.get('/api/panel/category/product?page=1&perPage=100000')
