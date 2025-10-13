@@ -5,7 +5,7 @@
 
             <div class="row mt-3">
                 <div class="col-12 mb-3">
-                    <div class="card" v-if="data?.length">
+                    <div class="card" v-if="data">
                         <div class="card-body">
                             <form id="editForm">
                                 <div class="row">
@@ -135,23 +135,27 @@ export default {
     },
 
     methods: {
-        loadProduct() {
+        async loadProduct() {
 
-            axios.get('/api/panel/product/' + this.id)
+            await axios.get('/api/panel/product/' + this.id)
                 .then((response) => {
                     this.data = response.data;
-                    if (this.data?.images) {
-                        this.images = this.data.images;
+                    console.log('dd',this.data)
+                    if (this.data?.features) {
+                        this.features = [];
+                        for (let i = 0; i < JSON.parse(this.data.features).length; i++) {
+                            this.features.push(JSON.parse(this.data.features)[i]);
+                        }
                     }
-                })
-                .then(() => {
-                    this.isDefined = true;
-                })
-                .then(() => {
-                    this.watchTextAreas();
-                })
-                .catch();
+                    if (this.data?.images) {
+                        for (let i = 0; i < this.data.images.length; i++) {
+                            this.images.push([i, this.data.images[i]]);
+                        }
+                    }
+                });
+
         },
+
         loadCategories() {
             axios.get('/api/panel/category/product?page=1&perPage=100000')
                 .then((response) => {
