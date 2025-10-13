@@ -90,16 +90,13 @@ export default {
             await axios.get('/api/panel/product/' + this.id)
                 .then((response) => {
                     this.data = response.data.product;
-                    // if (document.querySelector('#text')) {
-                    //     document.querySelector('#text').innerText = this.data.text;
-                    // }
                     if (this.data?.features) {
                         this.features = [];
                         for (let i = 0; i < JSON.parse(this.data.features).length; i++) {
                             this.features.push(JSON.parse(this.data.features)[i]);
                         }
                     }
-                    if (this.data.images) {
+                    if (this.data?.images) {
                         for (let i = 0; i < this.data.images.length; i++) {
                             this.images.push([i, this.data.images[i]]);
                         }
