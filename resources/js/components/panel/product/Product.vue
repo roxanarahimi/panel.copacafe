@@ -82,14 +82,14 @@ export default {
     },
     mounted() {
         this.loadProduct();
-
     },
     methods: {
         async loadProduct() {
 
             await axios.get('/api/panel/product/' + this.id)
                 .then((response) => {
-                    this.data = response;
+                    this.data = response.data;
+                    console.log('dd',this.data)
                     if (this.data?.features) {
                         this.features = [];
                         for (let i = 0; i < JSON.parse(this.data.features).length; i++) {
